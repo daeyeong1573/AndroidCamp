@@ -21,13 +21,14 @@ class MainActivity : AppCompatActivity() {
     private lateinit var viewModel: MainViewModel
     private lateinit var mainrecycler: RecyclerView
     private lateinit var but: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         mainrecycler = findViewById(R.id.recycler)
         val application = requireNotNull(this).application
         val factory = MainViewModelFactory()
-        viewModel = ViewModelProviders.of(this,factory).get(MainViewModel::class.java)
+        viewModel = ViewModelProviders.of(this, factory).get(MainViewModel::class.java)
         but = findViewById(R.id.button)
         but.setOnClickListener {
             addData()
